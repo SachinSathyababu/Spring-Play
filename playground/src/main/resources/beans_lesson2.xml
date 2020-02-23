@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Autowiring and manual wiring samples -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+ <!--  manual wire -->       
+ <!--        <bean id='printer' class='com.sachin.playground.model.Printer' scope='singleton'>
+		<property name="name" value='Sachin'></property>
+		</bean>
+        
+        <bean id='scanner' class='com.sachin.playground.model.Scanner'>
+        <constructor-arg name="name" value='Sajan'></constructor-arg>
+        <constructor-arg name="description" value='black'></constructor-arg>
+        <constructor-arg name="modelNumber" value='789'></constructor-arg>
+        <constructor-arg name="cost" value='1099'></constructor-arg>
+        </bean>
+        
+        <bean id='mmp' class='com.sachin.playground.model.MultipurposeMachine' scope='singleton'>
+		<property name="printer" ref='printer'></property>
+		<property name="scanner" ref='scanner'></property>
+		</bean>
+		
+		-->
+		
+		<bean id = "factory" class = 'com.sachin.x.model.PrinterFactory'></bean>
+		
+		<bean id = "unique" factory-bean="factory" factory-method="getPrinter"  primary="true"></bean>
+		
+		<bean id='canonPrinter' class='com.sachin.playground.model.Canon' scope='singleton' >
+		</bean>
+		
+		<bean id='xp' class='com.sachin.playground.model.XeroxPrinter' scope='singleton'>
+		<property name="name" value='jram'></property>
+		</bean>
+        
+       <!--  <bean id='scanner' class='com.sachin.playground.model.Scanner'>
+        <constructor-arg name="name" value='Sajan'></constructor-arg>
+        <constructor-arg name="description" value='black'></constructor-arg>
+        <constructor-arg name="modelNumber" value='789'></constructor-arg>
+        <constructor-arg name="cost" value='1099'></constructor-arg>
+        </bean> -->
+       
+        
+        </beans>

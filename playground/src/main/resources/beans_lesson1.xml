@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Bean Creation samples -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+        
+        <bean id='scanner' class='com.sachin.playground.model.Scanner' scope='prototype'>
+		<property name="name" value='Sachin'></property>
+		<property name="description" value='color'></property>
+		<property name="modelNumber" value='123'></property>
+		<property name="cost" value='1374'></property>
+		</bean>
+        
+        <bean id='scanner1' class='com.sachin.playground.model.Scanner'>
+        <constructor-arg name="name" value='Sajan'></constructor-arg>
+        <constructor-arg name="description" value='black'></constructor-arg>
+        <constructor-arg name="modelNumber" value='789'></constructor-arg>
+        <constructor-arg name="cost" value='${mmp.pages}'></constructor-arg>
+        </bean>
+        
+        </beans>
